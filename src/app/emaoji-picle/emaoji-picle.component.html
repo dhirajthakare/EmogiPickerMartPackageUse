@@ -1,0 +1,16 @@
+<h2>Hello Angular!</h2>br
+
+<p>Start To Pickup Emoji in your Projects
+</p>
+<input name="searchBox" id="searchBox" type="searchBox" #box [(ngModel)]="message" (focus)="onFocus()"  ><button  (click)="toggleEmojiPicker()" >😀</button>
+<p>{{message}}</p>
+<!-- <emoji-mart ></emoji-mart>
+
+
+
+<emoji-mart title="Pick your emoji…" emoji="point_up"></emoji-mart>
+<emoji-mart set="emojione"></emoji-mart>
+<emoji-mart 
+  [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"
+></emoji-mart> -->
+<emoji-mart *ngIf="showEmojiPicker" class="emoji-mart"  set="{{set}}" emoji="point_up"  (emojiSelect)="addEmoji($event)" title="Add Your Emojis" [style]="{ position: 'absolute', bottom: '30%', right: '50%' }"></emoji-mart>
